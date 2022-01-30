@@ -23,7 +23,7 @@ export class Tab1Page {
 
   getdata(){
     //filter carian key
-    this.urllisting= 'http://localhost/jsonphpdb/aduanlisting.php?key='+this.key;
+    this.urllisting= 'http://192.168.1.104/ionicjsondbphp/jsonphpdb/aduanlisting.php?key='+this.key;
     
     this.headers=new HttpHeaders();
     this.headers.append('ContentType', 'application/json');

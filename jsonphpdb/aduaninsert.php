@@ -8,17 +8,19 @@ header("Access-Control-Allow-Origin: *");
 include "connect.php";
 // TAMBAH ADUAN
 	$_POST = json_decode(file_get_contents('php://input'), true);
-    	$tajuk = $_POST['tajuk'];
+    	$deskripsi = $_POST['deskripsi'];
     	$latitude = $_POST['latitude'];
     	$longitude = $_POST['longitude'];
+        $jenisaduan = $_POST['jenisaduan'];
 	//$obj = json_decode($json);
   
-        $sql = "INSERT INTO aduan (tajuk, latitude, longitude) VALUES ('$tajuk' , '$latitude', '$longitude')";
+        $sql = "INSERT INTO aduan (deskripsi, latitude, longitude,jenisaduan, tarikhaduan)
+         VALUES ('$deskripsi' , '$latitude', '$longitude','$jenisaduan','".date("Y-m-d")."')";
 	//echo $sql; 
 	//echo file_get_contents('php://input');
         $result = mysqli_query($db,$sql);
         if ($result==true){
-            echo '{"success":"true","error":"no-error"}';
+            echo '{"success":"true","error":$sql}';
   //success message sent back to mobile app
             
         }
@@ -28,6 +30,6 @@ include "connect.php";
 		    //echo "error";//error message sent back to mobile app
 	        
 	    }
-        $conn->close();    
+        //$conn->close();    
     
     ?>
