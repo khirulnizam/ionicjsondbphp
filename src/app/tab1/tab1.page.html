@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Carian senarai Aduan
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-searchbar placeholder="Carian..." [(ngModel)]="key"
+   animated="true" (ionChange)="getdata()"></ion-searchbar>
+  <ion-item *ngFor="let aduan of aduanlist">
+    {{aduan.deskripsi}} <br>
+    {{aduan.jenisaduan}} 
+    {{aduan.tarikhaduan}} 
+  </ion-item>
+</ion-content>
