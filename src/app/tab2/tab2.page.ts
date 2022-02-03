@@ -11,7 +11,8 @@ export class Tab2Page {
   data:any={};
   aduandata:any;
   headers:HttpHeaders;
-  urlinsert:any="http://192.168.1.104/ionicjsondbphp/jsonphpdb/aduaninsert.php";
+  //urlinsert:any="http://192.168.1.104/ionicjsondbphp/jsonphpdb/aduaninsert.php";
+  urlinsert:any="http://localhost/ionicjsondbphp/jsonphpdb/aduaninsert.php";
   constructor(private http:HttpClient) { }
 
   ngOnInit() {

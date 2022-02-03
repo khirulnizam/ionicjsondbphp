@@ -20,7 +20,9 @@ include "connect.php";
 	//echo file_get_contents('php://input');
         $result = mysqli_query($db,$sql);
         if ($result==true){
-            echo '{"success":"true","error":$sql}';
+            echo '{"success":"true","error":"' ;
+                echo $sql;
+                echo '"}';
   //success message sent back to mobile app
             
         }
