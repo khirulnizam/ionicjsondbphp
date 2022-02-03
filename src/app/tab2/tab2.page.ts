@@ -22,9 +22,9 @@ export class Tab2Page {
   hantaraduan(){
     this.aduandata={
       'deskripsi':this.data.deskripsi,
-      'latitude':this.data.latitude,
-      'longitude':this.data.longitude,
       'jenisaduan':this.data.jenisaduan,
+      'longitude':this.data.longitude,
+      'latitude':this.data.latitude,
     };
     //headers
     
@@ -38,12 +38,13 @@ export class Tab2Page {
         //console.log('berjaya');
         console.log(this.success);
         console.log(this.error);
+        alert("Aduan telah dihantar, terima kasih");
     },error=> {
       //console.log('error');
         console.log(this.success);
         console.log(this.error);
+        alert("Maaf simpanan rekod ada masalah");
     });
-
   }//hantaraduan
 
 }

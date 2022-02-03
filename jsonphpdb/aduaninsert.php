@@ -9,20 +9,23 @@ include "connect.php";
 // TAMBAH ADUAN
 	$_POST = json_decode(file_get_contents('php://input'), true);
     	$deskripsi = $_POST['deskripsi'];
-    	$latitude = $_POST['latitude'];
-    	$longitude = $_POST['longitude'];
         $jenisaduan = $_POST['jenisaduan'];
+        $latitude = $_POST['latitude'];
+        $longitude = $_POST['longitude'];
 	//$obj = json_decode($json);
   
-        $sql = "INSERT INTO aduan (deskripsi, latitude, longitude,jenisaduan, tarikhaduan)
-         VALUES ('$deskripsi' , '$latitude', '$longitude','$jenisaduan','".date("Y-m-d")."')";
+        $sql = "INSERT INTO aduan (deskripsi, jenisaduan, 
+            latitude,longitude,tarikhaduan)
+         VALUES ('$deskripsi','$jenisaduan',
+                '$latitude','$longitude',
+                '".date("Y-m-d")."')";
 	//echo $sql; 
 	//echo file_get_contents('php://input');
         $result = mysqli_query($db,$sql);
         if ($result==true){
-            echo '{"success":"true","error":"' ;
-                echo $sql;
-                echo '"}';
+            echo '{"success":"true","error":"null"}' ;
+                //echo $sql;
+                //echo '"}';
   //success message sent back to mobile app
             
         }

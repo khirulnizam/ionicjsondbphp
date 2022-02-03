@@ -8,25 +8,29 @@
 
 <ion-content>
   <ion-card>
-    <p>Hantar aduan</p>
+    <p>Borang aduan</p>
     <ion-item>
       <ion-input [(ngModel)]="data.deskripsi" 
       placeholder="Deskripsi aduan"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="data.latitude" 
-      placeholder="GPS latitude" type="number">
-      </ion-input>
+      <ion-select placeholder="Pilih kategori aduan"
+      [(ngModel)]="data.jenisaduan">
+        <ion-select-option value="sampah">Masalah pembuangan sampah</ion-select-option>
+        <ion-select-option value="hentianbas">Masalah hentian bas</ion-select-option>
+        <ion-select-option value="haiwanliar">Masalah haiwan liar</ion-select-option>
+        <ion-select-option value="jalanraya">Masalah jalan raya</ion-select-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-input [(ngModel)]="data.longitude" 
-      placeholder="GPS longitude" type="number">
-      </ion-input>
+      type="number"
+      placeholder="GPS: Longitude"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="data.jenisaduan" 
-      placeholder="Jenis Aduan">
-      </ion-input>
+      <ion-input [(ngModel)]="data.latitude" 
+      type="number"
+      placeholder="GPS: Latitude"></ion-input>
     </ion-item>
     <ion-button (click)="hantaraduan()">
       Hantar Aduan</ion-button>

@@ -1,4 +1,5 @@
 <?php 
+//access dari ionic client
 header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Methods: POST");
@@ -33,46 +34,30 @@ WHERE deskripsi  LIKE '%$key%' ";
 $rs=mysqli_query($db,$sql);
 
 if($rs==false){
-
 	echo mysqli_error($rs);
-
 }
-
-
-
 //no record found
-
 if (mysqli_num_rows($rs)==0){
-
 }
 
 else{//found some records
-
-
 	while($rec=mysqli_fetch_array($rs)){
-
 		//capture one record
-
 		$aduanlist=array();
-
 		$aduanlist["id"] = $rec["id"];
-
 		$aduanlist["deskripsi"] = $rec["deskripsi"];
-
 		$aduanlist["jenisaduan"] = $rec["jenisaduan"];
-
 		$aduanlist["tarikhaduan"] = $rec["tarikhaduan"];
 
-		//push to response
-
+		//push to response 
 		array_push($response["aduanlist"], $aduanlist);
 
 	}//end while
 	
 
 }//end found records
+//simpan data dalam format json
 echo json_encode($response,JSON_PRETTY_PRINT);
-//echo json_encode($response, JSON_PRETTY_PRINT); 
-//print JSON format with beautification
+
 
 ?>
