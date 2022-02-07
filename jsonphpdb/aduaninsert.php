@@ -16,9 +16,9 @@ include "connect.php";
   
         $sql = "INSERT INTO aduan (deskripsi, jenisaduan, 
             latitude,longitude,tarikhaduan)
-         VALUES ('$deskripsi','$jenisaduan',
+            VALUES ('$deskripsi','$jenisaduan',
                 '$latitude','$longitude',
-                '".date("Y-m-d")."')";
+                '".date("Y-m-d")."')";//date ISO format
 	//echo $sql; 
 	//echo file_get_contents('php://input');
         $result = mysqli_query($db,$sql);

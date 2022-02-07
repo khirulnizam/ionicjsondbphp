@@ -23,7 +23,10 @@ export class Tab1Page {
 
   getdata(){
     //filter carian key
-    this.urllisting= 'http://localhost/ionicjsondbphp/jsonphpdb/aduanlisting.php?key='+this.key;
+    this.urllisting= 'http://khirulnizam.com/training/aduanlist.php?key='+this.key;
+    
+    //kemudian
+    //this.urllisting= 'http://localhost/ionicjsondbphp/jsonphpdb/aduanlisting.php?key='+this.key;
     //this.urllisting= 'http://192.168.1.104/ionicjsondbphp/jsonphpdb/aduanlisting.php?key='+this.key;
     
     this.headers=new HttpHeaders();
@@ -41,7 +44,7 @@ export class Tab1Page {
         console.log(this.error);
     });
 
-  }//hantaraduan
+  }//getdata()
 
   ngOnInit() {
   }
